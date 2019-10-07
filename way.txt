@@ -1,4 +1,6 @@
-    $ composer require tymon/jwt-auth:dev-develop --prefer-source
+   https://blog.pusher.com/laravel-jwt/
+   
+   $ composer require tymon/jwt-auth:dev-develop --prefer-source
 
  config/app file
 
