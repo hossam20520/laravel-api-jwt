@@ -1,0 +1,34 @@
+    $ composer require tymon/jwt-auth:dev-develop --prefer-source
+
+ config/app file
+
+Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
+ 'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, 
+ 'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+
+
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+
+
+
+php artisan jwt:secret
+
+$ php artisan make:controller UserController 
+$ php artisan make:controller DataController
+
+$ php artisan make:middleware JwtMiddleware
+
+app/http/Kernel.php file 
+
+protected $routeMiddleware = [
+[...]
+'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
+
+
+
+
+
+
+
